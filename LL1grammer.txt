@@ -1,0 +1,152 @@
+
+No of non terminals:40
+No of productions:90
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+The grammer tried converted to LL(1)
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<program>--><datadecls><funclist>
+
+<funclist>-->empty|<func><funclist>
+
+<func>--><funcdecl><funcprime>
+
+<funcprime>-->semicolon|left_brace<datadecls><statements>right_brace
+
+<funcdecl>--><typename>ID left_parenthesis<parameterlist>right_parenthesis
+
+<typename>-->int|void|binary|decimal
+
+<parameterlist>-->empty|void<parameter list prime>|int ID <non-emptylist>prime|binary ID<non-emptylist>prime|decimal ID<non-emptylist>prime
+
+<parameter list prime> --> ID ID<non-emptylist>prime|empty
+
+<non-emptylist>prime-->comma <non-emptylist>|empty
+
+<non-emptylist>-->int ID <non-emptylist>prime|void ID<non-emptylist>prime|binary ID<non-emptylist>prime|decimal ID<non-emptylist>prime
+
+<datadecls>-->empty|int<idlist> semicolon <datadecls>|void <idlist> semicolon<datadecls>|binary <idlist> semicolon <datadecls>|decimal<idlist>semicolon<datadecls>
+
+<idlist>--><id><idlist>prime
+
+<idlist>prime-->comma<id><idlist>prime|empty
+
+<id>-->ID<id prime>
+
+<id prime> -->empty|left_bracket<expression>right_bracket
+
+
+<blockstatements>-->left_brace <statements>right_brace
+
+<statements>-->empty|ID <statement prime><statements>|<ifstatement><statements>|<whilestatement><statements>|<returnstatement><statements>|<breakstatement><statements>|<continuestatement><statements>|readleft_parenthesis ID right_parenthesis semicolon<statements>|write left_parenthesis <expression> right_parenthesis semicolon<statements>|printleft_parenthesis STRING right_parenthesis semicolon<statements>
+
+<statement prime> --> equal_sign <expression> semicolon| left_bracket <expression> right_bracket equal_sign<expression>semicolon|left_parenthesis <expr list> right_parenthesis semicolon 
+
+
+<exprlist>-->empty|<non-emptyexprlist>
+
+<non-emptyexprlist>--><expression><non-emptyexprlist>prime
+
+<non-emptyexprlist>prime-->comma<expression><non-emptyexprlist>prime|empty
+
+
+
+
+<ifstatement>-->if left_parenthesis<conditionexpression>right_parenthesis<blockstatements>
+
+<conditionexpression>--><condition><condition expression prime>
+<condition expression prime> --> empty|<conditionop><condition>
+
+<conditionop>-->double_and_sign|double_or_sign
+
+<condition>--><expression><condition prime>
+
+<condition prime> --> <comparisonop><expression>
+
+<comparisonop>-->==|!=|>|>=|<|<=
+
+
+<whilestatement>-->while left_parenthesis<conditionexpression>right_parenthesis<blockstatements>
+
+<returnstatement>-->return<expression>semicolon|return semicolon
+
+<breakstatement>--->break semicolon
+
+<continuestatement>--->continue semicolon
+
+
+<expression>--><term><expression>prime
+
+<expression>prime--><addop><term><expression>prime|empty
+
+<addop>-->plus_sign|minus_sign
+
+<term>--><factor><term>prime
+
+<term>prime--><mulop><factor><term>prime|empty
+
+<mulop>-->star_sign|forward_slash
+
+<factor>-->ID<factor prime>|NUMBER|minus_sign NUMBER|left_parenthesis<expression>right_parenthesis
+
+<factor prime> -->left_bracket<expression>right_bracket|left_parenthesis<exprlist>right_parenthesis|empty
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
